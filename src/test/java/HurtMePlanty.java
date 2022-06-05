@@ -12,7 +12,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class HurtMePlanty {
-   // String manualPrice = "USD 1,081.20";
+    // String manualPrice = "USD 1,081.20";
 
     @Test
     public void HurtMePlantyTest() throws InterruptedException {
@@ -54,25 +54,28 @@ public class HurtMePlanty {
         WebElement tabItem = driver.findElement(By.xpath("//md-tab-item[@aria-controls='tab-content-1']"));
         tabItem.click();
 
-        WebElement instNumber = driver.findElement(By.id("input_86"));
+        WebElement instNumber = driver.findElement(By.id("input_85"));
         instNumber.sendKeys("4");
 
-        WebElement whatInstFor = driver.findElement(By.id("input_87"));
+        WebDriverWait waitInstFor = new WebDriverWait(driver, Duration.ofSeconds(10));
+        waitInstFor.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@ng-model='listingCtrl.computeServer.label']")));
+
+        WebElement whatInstFor = driver.findElement(By.xpath("//*[@ng-model='listingCtrl.computeServer.label']"));
         whatInstFor.sendKeys("");
 
         WebElement operSystem = driver.findElement(By.id("select_value_label_77"));
         operSystem.click();
-        WebElement freeSoft = driver.findElement(By.xpath("//*[@id='select_option_88']"));
+        WebElement freeSoft = driver.findElement(By.id("select_option_87"));
         freeSoft.click();
 
         WebElement vmClass = driver.findElement(By.id("select_value_label_78"));
         vmClass.click();
-        WebElement selectVmClass = driver.findElement(By.id("select_option_101"));
+        WebElement selectVmClass = driver.findElement(By.id("select_option_100"));
         selectVmClass.click();
 
         WebDriverWait waitSeries = new WebDriverWait(driver, Duration.ofSeconds(10));
-        waitSeries.until(ExpectedConditions.presenceOfElementLocated(By.id("select_111")));
-        WebElement series = driver.findElement(By.id("select_111"));
+        waitSeries.until(ExpectedConditions.presenceOfElementLocated(By.id("select_value_label_80")));
+        WebElement series = driver.findElement(By.id("select_value_label_80"));
         series.click();
 
         WebDriverWait waitSelectSeariesOpt = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -82,7 +85,7 @@ public class HurtMePlanty {
 
 
 
-        WebElement machineType = driver.findElement(By.id("select_113"));
+        WebElement machineType = driver.findElement(By.id("select_value_label_81"));
         machineType.click();
 
 
@@ -115,8 +118,8 @@ public class HurtMePlanty {
         selectLocalSsd.click();
 
         WebDriverWait waitDataCenterLocate = new WebDriverWait(driver, Duration.ofSeconds(10));
-        waitDataCenterLocate.until(ExpectedConditions.presenceOfElementLocated(By.id("select_121")));
-        WebElement dataCenterLocate = driver.findElement(By.id("select_121"));
+        waitDataCenterLocate.until(ExpectedConditions.presenceOfElementLocated(By.id("select_value_label_83")));
+        WebElement dataCenterLocate = driver.findElement(By.id("select_value_label_83"));
         dataCenterLocate.click();
 
 
@@ -125,27 +128,30 @@ public class HurtMePlanty {
         WebElement searchdataCenterLocate = driver.findElement(By.xpath("//*[@ng-repeat='item in listingCtrl.fullRegionList | filter:listingCtrl.inputRegionText.computeServer'][@value='europe-west3']"));
         searchdataCenterLocate.click();
 
-        WebDriverWait waitUsage = new WebDriverWait(driver, Duration.ofSeconds(10));
-        waitUsage.until(ExpectedConditions.presenceOfElementLocated(By.id("select_128")));
-        WebElement commitUsage = driver.findElement(By.id("select_128"));
+        // WebDriverWait waitUsage = new WebDriverWait(driver, Duration.ofSeconds(10));
+        // waitUsage.until(ExpectedConditions.presenceOfElementLocated(By.id("select_128")));
+        // WebElement commitUsage = driver.findElement(By.id("select_128"));
+
+        WebElement estimate = driver.findElement(By.xpath("//*[@ng-click='listingCtrl.addComputeServer(ComputeEngineForm);']"));
+        estimate.click();
 
 
-     //   WebElement searchCommitUsage = driver.findElement(By.xpath("//*[text()='1 Year']"));
-     //   searchCommitUsage.click();
-
-
-
-
-     //   WebElement series = driver.findElement(By.id("select_option_198"));
-     //   series.submit();
+        //   WebElement searchCommitUsage = driver.findElement(By.xpath("//*[text()='1 Year']"));
+        //   searchCommitUsage.click();
 
 
 
-      //  WebElement operSystemList = driver.findElement(By.xpath("//*[@class='md-select-menu-container md-active md-clickable']/md-select-menu/md-content"));
+
+        //   WebElement series = driver.findElement(By.id("select_option_198"));
+        //   series.submit();
 
 
-     //   List<WebElement> operSyatemList = driver.findElements(By.xpath("//*[@class='md-overflow']/md-content"));
-     //   operSyatemList.get(0).click();
+
+        //  WebElement operSystemList = driver.findElement(By.xpath("//*[@class='md-select-menu-container md-active md-clickable']/md-select-menu/md-content"));
+
+
+        //   List<WebElement> operSyatemList = driver.findElements(By.xpath("//*[@class='md-overflow']/md-content"));
+        //   operSyatemList.get(0).click();
 
         Thread.sleep(10000);
         driver.quit();
