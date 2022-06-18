@@ -1,3 +1,5 @@
+package lab1;
+
 import io.netty.util.Timeout;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +14,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class iCanWin {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         WebDriver driver = new EdgeDriver();
         driver.get("https://pastebin.com");
 
@@ -24,7 +26,6 @@ public class iCanWin {
 
         clickSubmit(driver);
 
-        Thread.sleep(10000);
         driver.quit();
     }
 

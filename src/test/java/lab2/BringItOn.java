@@ -1,3 +1,5 @@
+package lab2;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,7 +23,7 @@ public class BringItOn {
     static String bashStr = "bash";
 
     @Test
-    public void bringItOnTest() throws InterruptedException {
+    public void bringItOnTest() {
         WebDriver driver = new EdgeDriver();
         driver.get("https://pastebin.com");
 
@@ -36,8 +38,6 @@ public class BringItOn {
         clickSubmit(driver);
 
         checkConditions(driver);
-
-        Thread.sleep(10000);
 
         driver.quit();
     }

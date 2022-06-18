@@ -15,7 +15,7 @@ public class HurtMePlanty {
     // String manualPrice = "USD 1,081.20";
 
     @Test
-    public void HurtMePlantyTest() throws InterruptedException {
+    public void HurtMePlantyTest() {
         WebDriver driver = new EdgeDriver();
         driver.get("https://cloud.google.com/");
 
@@ -122,41 +122,14 @@ public class HurtMePlanty {
         WebElement dataCenterLocate = driver.findElement(By.id("select_value_label_83"));
         dataCenterLocate.click();
 
-
         WebDriverWait waitSearchDataCenter = new WebDriverWait(driver, Duration.ofSeconds(10));
         waitSearchDataCenter.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@ng-repeat='item in listingCtrl.fullRegionList | filter:listingCtrl.inputRegionText.computeServer'][@value='europe-west3']")));
         WebElement searchdataCenterLocate = driver.findElement(By.xpath("//*[@ng-repeat='item in listingCtrl.fullRegionList | filter:listingCtrl.inputRegionText.computeServer'][@value='europe-west3']"));
         searchdataCenterLocate.click();
 
-        // WebDriverWait waitUsage = new WebDriverWait(driver, Duration.ofSeconds(10));
-        // waitUsage.until(ExpectedConditions.presenceOfElementLocated(By.id("select_128")));
-        // WebElement commitUsage = driver.findElement(By.id("select_128"));
-
         WebElement estimate = driver.findElement(By.xpath("//*[@ng-click='listingCtrl.addComputeServer(ComputeEngineForm);']"));
         estimate.click();
 
-
-        //   WebElement searchCommitUsage = driver.findElement(By.xpath("//*[text()='1 Year']"));
-        //   searchCommitUsage.click();
-
-
-
-
-        //   WebElement series = driver.findElement(By.id("select_option_198"));
-        //   series.submit();
-
-
-
-        //  WebElement operSystemList = driver.findElement(By.xpath("//*[@class='md-select-menu-container md-active md-clickable']/md-select-menu/md-content"));
-
-
-        //   List<WebElement> operSyatemList = driver.findElements(By.xpath("//*[@class='md-overflow']/md-content"));
-        //   operSyatemList.get(0).click();
-
-        Thread.sleep(10000);
         driver.quit();
-
-
     }
-
 }
